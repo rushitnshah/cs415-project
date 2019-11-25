@@ -3,13 +3,6 @@ import numpy as np
 
 vid = cv2.VideoCapture(0)
 
-
-# lower_red1 = np.array([0,50,50])
-# upper_red1 = np.array([10,255,255])
-#
-# lower_red2 = np.array([170,50,50])
-# upper_red2 = np.array([180,255,255])
-#
 lower_green = np.array([33,80,40])
 upper_green = np.array([102,255,255])
 
@@ -30,9 +23,6 @@ while True:
     frameHSV = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
     #Create mask
-    # frameMask1 = cv2.inRange(frameHSV,lower_red1,upper_red1)
-    # frameMask2 = cv2.inRange(frameHSV,lower_red2,upper_red2)
-    # frameMaskR  = frameMask1+frameMask2
     frameMaskG = cv2.inRange(frameHSV, lower_green, upper_green)
 
     #Morphology
